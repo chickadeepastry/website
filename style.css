@@ -1,0 +1,131 @@
+:root {
+  --bg: #ffffff;
+  --ink: #3a332b;
+  --accent: #c94666;
+}
+
+@font-face {
+  font-family: "Adabelle Handwriting";
+  src: url("AdabelleHandwriting-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+
+/* Fluid root size: scales with viewport between small and large screens. */
+html {
+  font-size: clamp(16px, 0.7rem + 0.7vw, 24px);
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Avenir", "Segoe UI", Roboto, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+}
+
+.header-inner {
+  position: relative;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 1.25rem;
+  transform: translateY(-50%);
+  height: 6rem;
+  width: auto;
+}
+
+@media (max-width: 540px) {
+  header {
+    padding: 1.25rem 1rem 0.5rem;
+  }
+  .logo {
+    position: static;
+    transform: none;
+    display: block;
+    margin: 0 auto 0.75rem;
+  }
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-family: "Adabelle Handwriting", cursive;
+  font-weight: normal;
+  font-size: 2.8rem;
+  letter-spacing: 0.04em;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: none;
+  border: none;
+  font: inherit;
+  color: var(--ink);
+  padding: 0.7rem 1.1rem;
+  min-height: 44px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab:hover { color: var(--accent); }
+
+.tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+main {
+  max-width: 42rem;
+  margin: 1.5rem auto 4rem;
+  padding: 0 1.25rem;
+}
+
+.panel { display: none; }
+.panel.active { display: block; }
+
+.lead {
+  font-size: 1.35rem;
+  color: var(--accent);
+}
+
+h2 {
+  font-weight: normal;
+  border-bottom: 1px solid #e3d8c8;
+  padding-bottom: 0.3rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+}
+
+.links li { margin: 0.6rem 0; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+a:hover { color: var(--ink); }
+
+.note, .hours { font-size: 0.95rem; }
+.note { color: #998f80; }
